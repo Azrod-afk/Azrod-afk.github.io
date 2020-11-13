@@ -19,6 +19,6 @@ self.addEventListener('install', event => {
     // same-origin and the path is '/dog.svg'
     if (url.origin == location.origin && url.pathname == 'dog.png') {
       console.log("Yes");
-      event.respondWith(caches.match('cat.svg'));
+      event.respondWith(caches.match('cat.png'));
     }
   });
