@@ -14,9 +14,11 @@ self.addEventListener('install', event => {
   self.addEventListener('fetch', event => {
     const url = new URL(event.request.url);
   
+    console.log("Fetch");
     // serve the cat SVG from the cache if the request is
     // same-origin and the path is '/dog.svg'
     if (url.origin == location.origin && url.pathname == 'dog.png') {
+      console.log("Yes");
       event.respondWith(caches.match('cat.svg'));
     }
   });
